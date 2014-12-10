@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>shopping cart with angular</title>
+    <script type="text/javascript" src="../regular/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../regular/css/main.css">
+</head>
+
+<body ng-controller="ListController">
+
+<h2>Shopping Cart</h2>
+
+<div class="container" ng-model="items" ng-repeat="item in items" class="container">
+    <label>{{item.name}}: </label> <label>{{item.price | currency}}</label>
+    <input type="number" ng-model='item.quantity' ng-change="totalPrice($index)" />
+    <label>TotalPrice: </label><label>{{item.totalPrice | currency}}</label>
+</div>
+
+</body>
+</html>
